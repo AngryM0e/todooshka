@@ -15,7 +15,7 @@ function CreateTask(props) {
 	return (
 		<div className='createTask'>
 			<input ref={inputRef} type="text" placeholder='Введите название задачи'
-				onChange={(e) => { setName(taskName = e.target.value) }}
+				onChange={(e) => { setName(e.target.value) }}
 			/>
 			<button type='button'
 				onClick={addAndClear(addTask(taskName))}
