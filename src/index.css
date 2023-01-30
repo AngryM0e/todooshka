@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&display=swap');
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	background: #333;
+	justify-content: center;
+}
+
+body, input {
+	font-family: 'Oswald', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.App {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.createTask {
+	display: flex;
+	width: 100%;
+	padding: 20px 0;
+	background: rgb(145, 145, 145);
+	justify-content: center;
+}
+
+.createTask input {
+	height: 25px;
+	width: 300px;
+	margin-right: 15px;
+	border-radius: 5px;
+	border: 0;
+	padding: 5px;
+}
+
+.createTask button {
+	padding: 0 5px;
+	border: 0;
+	border-radius: 5px;
+}
+
+.createTask button:hover{
+	background-color: rgb(112, 103, 103);
+}
+.createTask  button:active {
+	transform: translateY(2px);
+}
+
+.tasklist {
+	background: rgb(153, 97, 97);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.task {
+	width: 70%;
+	display: flex;
+	margin: 10px;
+	justify-content: center;
+	align-items: center;
+}
+
+.task input {
+	height: 25px;
+	width: 300px;
+	margin-right: 15px;
+	border-radius: 5px;
+	padding: 5px;
+	border: 0;
+}
+
+.buttons {
+	display: inline-block;
+}
+
+.edit-button, .delete-button {
+	width: 25px;
+	height: 25px;
+	margin-right: 10px;
+}
+
+.edit-button:hover, .delete-button:hover {
+	background: rgb(151, 151, 151);
+	border-radius: 5px;
+}
+
+.edit-button:active, .delete-button:active  {
+	transform: translateY(2px);
+}
