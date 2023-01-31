@@ -2,7 +2,7 @@ import Task from './task'
 
 function Tasklist(props) {
 
-	const { tasks, deleteTask } = props;
+	const { tasks } = props;
 
 	return (
 		<div className='tasklist'>
@@ -12,7 +12,8 @@ function Tasklist(props) {
 					tasks.map(task =>
 						<Task key={task.id}
 							task={task}
-							deleteTask={deleteTask}
+							deleteTask={props.deleteTask}
+							editTask={props.editTask}
 						/>
 					)
 					: <h2>Задачи отстутствуют</h2>

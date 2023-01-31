@@ -44,6 +44,18 @@ class App extends React.Component {
 		this.setState({ tasks: filteredTasks })
 	}
 
+
+	editTask = (taskName, id) => {
+		this.setState({
+			tasks: this.state.tasks.map(task => {
+				if(task.id === id){
+					task.taskName = taskName
+				}
+				return task
+			}),
+		})
+	}
+
 	render() {
 		return (
 
@@ -51,6 +63,7 @@ class App extends React.Component {
 				<CreateTask addTask={this.addTask} />
 				<Tasklist tasks={this.state.tasks}
 					deleteTask={this.deleteTask}
+					editTask={this.editTask}
 				/>
 			</div>
 		);
