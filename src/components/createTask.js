@@ -4,21 +4,27 @@ function CreateTask(props) {
 
 	const { addTask } = props;
 	let [taskName, setName] = useState('');
-	const inputRef = useRef(null);
-	const addAndClear = (addTask) => (e) => {
-		addTask();
-		inputRef.current.value = '';
-		setName(taskName = '');
+
+	const addAndClear = (e) => {
+		addTask(taskName)(e);
+		setName('');
+
+		e.preventDefault();
 	}
 
+	const onChange = (e) => {
+		setName(e.target.value);
+
+		e.preventDefault();
+	}
 
 	return (
 		<div className='createTask'>
-			<input ref={inputRef} type="text" placeholder='Введите название задачи'
-				onChange={(e) => { setName(e.target.value) }}
+			<input value={taskName} type="text" placeholder='Введите название задачи'
+				onChange={onChange}
 			/>
 			<button type='button'
-				onClick={addAndClear(addTask(taskName))}
+				onClick={addAndClear}
 			>
 				Добавить
 			</button>
