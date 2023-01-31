@@ -48,7 +48,7 @@ class App extends React.Component {
 	editTask = (taskName, id) => {
 		this.setState({
 			tasks: this.state.tasks.map(task => {
-				if(task.id === id){
+				if (task.id === id) {
 					task.taskName = taskName
 				}
 				return task
@@ -60,6 +60,7 @@ class App extends React.Component {
 		return (
 
 			<div className="App">
+				{console.log(this.state.tasks)}
 				<CreateTask addTask={this.addTask} />
 				<Tasklist tasks={this.state.tasks}
 					deleteTask={this.deleteTask}
