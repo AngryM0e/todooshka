@@ -1,5 +1,5 @@
 import { TfiMarkerAlt, TfiClose } from 'react-icons/tfi'
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 function Task(props) {
 
@@ -7,15 +7,16 @@ function Task(props) {
 	const [task, setstate] = useState(props.task);
 	const inputRef = useRef(null);
 
+	useEffect(() => {
+		inputRef.current.focus();
+	}, [task]);
+
 	const onClick = (task) => (e) => {
 		const neWtask = Object.assign({}, task);
 		neWtask.isDisable = !neWtask.isDisable;
 		neWtask.taskName = inputRef.current.value;
 		setstate(neWtask);
-		setTimeout(() => {
-			inputRef.current.focus();
-		}, 200)
-		
+
 	}
 	return (
 		<div className="task">
